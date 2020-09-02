@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+table, td {
+  border: 1px solid black;
+}
+</style>
+</head>
+<body>
+
+<h3>Operators</h3>
+
+<table id="myTable">
+  <tr>
+    <td>PP</td>
+    <th>95</th>
+  </tr>
+  <tr>
+    <td>BRC</td>
+    <th>80</th>
+  </tr>
+   <td>DD</td>
+   <th>79</th>
+  </tr> 
+</table>
+
+
+<button onclick="window.print()">Print</button>
+
+<script>
+function myFunction() {
+  var x = document.getElementById("myTable");
+  x.deleteRow(0);
+}
+</script>
+
+</body>
+</html>
