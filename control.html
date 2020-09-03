@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>hi</title>
+
+</head>
+<body>
+<h1>STATEMENTS</h1>
+<p>Enter number<p>
+<input type="number" id="input1" name="" required="true">
+<button onclick="check()">Submit</button><br>
+<span id="id1"></span><br>
+<span id="id2"></span><br>
+<h2>FIBBONACCI SERIES:</h2>
+<p>Enter the number of numbers to be in fibbonacci series<p>
+<input type="number" id="input2" name="" required>
+<button onclick="fibbonacci()">Submit</button><br>
+
+<span id="id3"></span>
+<script type="text/javascript">
+	function check() {
+			var num=document.querySelector("#input1").value;
+			var span=document.querySelector("#id1");
+			var s=0;
+			try{
+				if(!num) throw "no input entered";
+				if(num<10) throw "number is low";
+				if(num>100) throw "number is high";
+				s=1;
+			}
+			catch(err){
+				span.innerHTML=err;
+			}
+			finally{
+				var span2=document.querySelector("#id2");
+				span2.innerHTML="finally block is executed";
+			}
+			if(s==1){
+				span.innerHTML="Yeah, entered value is between 10 and 100"
+			}
+			
+			/console.log(num);/
+			/*if(!num){
+				span.innerHTML="you have to enter a number";
+			}else if(num>9 && num<101){
+				span.innerHTML="entered value is between 10 and 100";
+			}else{
+				span.innerHTML="entered value is not in the range of(10,100)";
+			}
+			var span2=document.querySelector("#id2");
+			switch(num){
+				case num:if(!num){
+							span.innerHTML="you have to enter a number";
+						}else if(num>9 && num<101){
+					     span2.innerHTML="entered value is between 10 and 100";
+				          }
+				          else{
+						span2.innerHTML="entered value is not in the range of(10,100)";
+						}
+						break;
+				default: break;
+			}*/
+		}
+
+		function fibbonacci(){
+			var num1=document.querySelector("#input2").value;
+			var span3=document.querySelector("#id3");
+			if(!num1){
+				span3.innerHTML="you have to enter a number";
+			}else if(num1<=0){
+				span3.innerHTML="invalid input";
+			}else if(num1==1){
+				span3.innerHTML="Fibbonacci series:"+"0";
+			}else if(num1==2){
+				span3.innerHTML="Fibbonacci series:"+"0 1";
+			}
+			else{
+				var a=0,b=1,sum=0;
+				var str=[0,1];
+				while(num1 !=str.length){
+					sum=a+b;
+					str.push(sum);
+					a=b;
+					b=sum;
+				}
+				span3.innerHTML="Fibbonacci series:"+str;
+			}
+
+		}
+</script>
+</body>
+</html>

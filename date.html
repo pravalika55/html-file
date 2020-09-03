@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>DOB</title>
+</head>
+<body>
+
+<h2>Document Object Model</h2> 
+<p>Click the button to print the current page.</p>
+
+Date of Birth:<input type="Date" name="">
+<input type="submit" name="" onclick="DOB()">
+<button onclick="window.print()">Print this page</button>
+
+<script type="text/javascript">
+	function DOB() {
+		// body...
+		var dob=document.querySelector("input");
+		console.log(dob.value);
+}
+
+</script>
+</body>
+</html>
