@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>hide  and display</title>
+  <style>
+  span {
+    background: #6495ED;
+    padding: 3px;
+    float: left;
+  }
+  </style>
+  <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+</head>
+<body>
+ 
+<button id="hider">Hide</button>
+<button id="Display">Display</button>
+<div>
+  <span>Hi</span> <span>GitHub</span> <span>This</span>
+  <span>is</span> <span>Hide</span> <span>and</span>
+  <span>Dispaly</span> <span>...</span>
+</div>
+ 
+<script>
+$( "#hider" ).click(function() {
+  $( "span:last-child" ).hide( "fast", function() {
+    // Use arguments.callee so we don't need a named function
+    $( this ).prev().hide( "fast", arguments.callee );
+  });
+});
+$( "#Display" ).click(function() {
+  $( "span" ).show( 2000 );
+});
+</script>
+ 
+</body>
